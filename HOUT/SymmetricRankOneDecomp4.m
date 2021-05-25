@@ -5,7 +5,7 @@ function [usigns,utildes,norms] = SymmetricRankOneDecomp4(K,tol)
     
     iter = 1;
     utildes = [];
-    while (residualNorm > tol)||(iter==1)
+    while ((residualNorm > tol)||(iter==1))
         
         [u, lambda] = HOPM4(K);
         usigns(iter) = sign(lambda);

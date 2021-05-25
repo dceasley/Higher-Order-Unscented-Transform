@@ -44,7 +44,7 @@ function [sigmas,w] = HigherOrderUnscentedEnsemble(mu,C,S,K,tol,gamma)
     muhat = -gamma^(-2)*tildemu;
     
     muhatO3 = outerProd3(muhat);
-    alpha = sqrt(tol/2/norm(muhatO3(:)));
+    alpha = sqrt(tol/2/max(eps,norm(muhatO3(:))));
     
 
     %Sigma Points

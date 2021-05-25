@@ -2,9 +2,9 @@ function [vtildes,norms] = SymmetricRankOneDecomp3(S,tol)
 % Approximate rank-1 decomposition of a totally symmetric 3-tensor S
     
     residualNorm = norm(S(:));
-    
+    %vtildes = zeros(size(S,1),1);
     iter = 1;
-    while (residualNorm > tol)||(iter==1)
+    while ((residualNorm > tol)||(iter==1))
         
         [v, lambda] = HOPM3(S);
         vtildes(:,iter) = nthroot(lambda, 3)*v;
